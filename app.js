@@ -250,22 +250,22 @@ console.log(game.gyms)
 game.gymStatus = () => {
   const gymTally = { completed: 0, incomplete: 0 }
 
-  this.gyms.forEach((gym) => {
-    // this refer to the game object
-    if (gym.completed) {
-      gymTally.completed++
-    } else {
-      gymTally.incomplete++
-    }
-  })
-  //simple loop way
-  // for (let i = 0; i < game.gyms.length; i++) {
-  //   if (game.gyms[i].completed) {
-  //     gymTally.completed += 1
+  // this.gyms.forEach((gym) => {
+  //   // this refer to the game object
+  //   if (gym.completed) {
+  //     gymTally.completed++
   //   } else {
-  //     gymTally.incomplete += 1
+  //     gymTally.incomplete++
   //   }
-  // }
+  // })
+  //simple loop way
+  for (let i = 0; i < game.gyms.length; i++) {
+    if (game.gyms[i].completed) {
+      gymTally.completed += 1
+    } else {
+      gymTally.incomplete += 1
+    }
+  }
 
   console.log(gymTally)
 }
